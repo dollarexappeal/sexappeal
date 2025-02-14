@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>$exappeal - Artiste Musical</title>
@@ -10,44 +10,94 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #1e1e1e;
+            background: linear-gradient(135deg, #1e1e1e, #9B54AE);
             color: #fff;
             text-align: center;
+            opacity: 0;
+            animation: fadeInPage 1.5s ease-in-out forwards;
         }
+
+        @keyframes fadeInPage {
+            to {
+                opacity: 1;
+            }
+        }
+
         header {
             padding: 20px;
             background-color: #9B54AE;
         }
+
         header h1 {
             margin: 0;
             font-size: 2.5rem;
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: 2px;
         }
+
         .banner {
-            width: 100%;           /* L'image prend toute la largeur */
-            height: 400px;         /* Hauteur fixe */
-            object-fit: cover;     /* Recadrage de l'image */
-            object-position: center;  /* Centre l'image */
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            object-position: center;
+            position: relative;
         }
+
+        .banner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .banner-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+        }
+
+        .banner-text h1 {
+            font-size: 2.5rem;
+            font-family: 'Oswald', sans-serif;
+        }
+
         .social-links {
             margin: 20px 0;
         }
+
         .social-links a {
             display: inline-block;
             margin: 0 10px;
             text-decoration: none;
             color: #fff;
             padding: 10px 20px;
-            border: 1px solid #fff;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
+            border-radius: 30px;
+            background: linear-gradient(45deg, #E0A3D3, #9B54AE);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, background 0.3s;
         }
+
         .social-links a:hover {
-            background-color: #fff;
+            transform: scale(1.1);
+            background: #FFD700;
             color: #000;
         }
+
+        .soundcloud-player {
+            margin: 40px auto;
+            max-width: 600px;
+        }
+
         .hyperfollow {
             margin-top: 40px;
         }
+
         .gallery {
             display: flex;
             flex-wrap: wrap;
@@ -55,24 +105,21 @@
             gap: 20px;
             margin: 40px 0;
         }
+
         .gallery img {
             max-width: 300px;
             border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
-        .soundcloud-player {
-            margin: 40px auto;
-            max-width: 600px;
-        }
-        footer {
-            margin-top: 40px;
-            padding: 20px;
-            background-color: #333;
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
         }
 
-        /* Style de la newsletter */
         .newsletter {
-            background-color: #9B54AE; /* Couleur de fond */
+            background-color: #9B54AE;
             padding: 40px;
             color: white;
             text-align: center;
@@ -83,6 +130,7 @@
         .newsletter h2 {
             font-size: 1.8rem;
             margin-bottom: 20px;
+            font-family: 'Oswald', sans-serif;
         }
 
         .newsletter form {
@@ -115,16 +163,70 @@
             background-color: #9B54AE;
             color: white;
         }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            background: linear-gradient(45deg, #9B54AE, #1e1e1e);
+            text-align: center;
+        }
+
+        footer .footer-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        footer .footer-links a:hover {
+            color: #FFD700;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: #1e1e1e;
+            padding: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #FFD700;
+        }
     </style>
 </head>
 <body>
+    <!-- Barre de navigation -->
+    <nav class="navbar">
+        <a href="#about">À propos</a>
+        <a href="#music">Musique</a>
+        <a href="#gallery">Galerie</a>
+        <a href="#newsletter">Newsletter</a>
+    </nav>
+
     <header>
         <h1>Bienvenue sur le site officiel de $exappeal</h1>
         <p>Découvrez ma musique et suivez-moi sur mes réseaux sociaux !</p>
     </header>
 
     <!-- Bannière -->
-    <img src="https://i.imgur.com/EztLbIY.jpeg" alt="Bannière de $exappeal" class="banner">
+    <div class="banner">
+        <div class="banner-text">
+            <h1>Découvrez mon univers musical</h1>
+            <p>Plongez dans le monde de $exappeal</p>
+        </div>
+        <img src="https://i.imgur.com/EztLbIY.jpeg" alt="Bannière de $exappeal" class="banner">
+    </div>
 
     <!-- Réseaux sociaux -->
     <div class="social-links">
@@ -155,20 +257,22 @@
     </div>
 
     <!-- Section Newsletter -->
-    <section class="newsletter">
+    <section class="newsletter" id="newsletter">
         <h2>Abonnez-vous à la Newsletter</h2>
         <form action="https://formspree.io/f/mrbeyglz" method="POST">
             <label for="email">Votre email :</label>
             <input type="email" name="email" id="email" placeholder="Entrez votre email" required>
-   <meta name="description" content="Découvrez la musique et les dernières actualités de $exappeal, artiste musical talentueux.">
-<meta name="keywords" content="Musique, $exappeal, Artiste, SoundCloud, Instagram, TikTok">
-         
             <button type="submit">S'abonner</button>
         </form>
     </section>
 
     <footer>
         <p>&copy; 2025 $exappeal. Tous droits réservés.</p>
+        <div class="footer-links">
+            <a href="https://instagram.com/dollarexappeal" target="_blank">Instagram</a>
+            <a href="https://www.snapchat.com/add/penaltyss" target="_blank">Snapchat</a>
+            <a href="https://www.tiktok.com/@getitjuvens" target="_blank">TikTok</a>
+        </div>
     </footer>
 </body>
 </html>
