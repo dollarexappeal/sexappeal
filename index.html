@@ -2,10 +2,15 @@
 <html lang="en">
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>$exappeal - Artiste Musical</title>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -204,6 +209,7 @@
             color: #FFD700;
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js" defer></script>
 </head>
 <body>
     <!-- Barre de navigation -->
@@ -249,30 +255,8 @@
     </div>
 
     <!-- Galerie d'images -->
-    <div class="gallery">
-        <img src="https://i.imgur.com/ze6C9N8.jpeg" alt="Image 1">
-        <img src="https://i.imgur.com/8vc0w3C.jpeg" alt="Image 2">
-        <img src="https://i.imgur.com/9TmZI8U.jpeg" alt="Image 3">
-        <img src="https://i.imgur.com/1lzouRg.jpeg" alt="Image 4">
-    </div>
-
-    <!-- Section Newsletter -->
-    <section class="newsletter" id="newsletter">
-        <h2>Abonnez-vous à la Newsletter</h2>
-        <form action="https://formspree.io/f/mrbeyglz" method="POST">
-            <label for="email">Votre email :</label>
-            <input type="email" name="email" id="email" placeholder="Entrez votre email" required>
-            <button type="submit">S'abonner</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 $exappeal. Tous droits réservés.</p>
-        <div class="footer-links">
-            <a href="https://instagram.com/dollarexappeal" target="_blank">Instagram</a>
-            <a href="https://www.snapchat.com/add/penaltyss" target="_blank">Snapchat</a>
-            <a href="https://www.tiktok.com/@getitjuvens" target="_blank">TikTok</a>
-        </div>
-    </footer>
-</body>
-</html>
+    <div class="gallery" id="gallery">
+        <a href="https://i.imgur.com/ze6C9N8.jpeg" data-lightbox="gallery"><img src="https://i.imgur.com/ze6C9N8.jpeg" alt="Image 1"></a>
+        <a href="https://i.imgur.com/8vc0w3C.jpeg" data-lightbox="gallery"><img src="https://i.imgur.com/8vc0w3C.jpeg" alt="Image 2"></a>
+        <a href="https://i.imgur.com/9TmZI8U.jpeg" data-lightbox="gallery"><img src="https://i.imgur.com/9TmZI8U.jpeg" alt="Image 3"></a>
+        <a href="https://
