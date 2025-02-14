@@ -107,6 +107,54 @@
         <img src="https://i.imgur.com/9TmZI8U.jpeg" alt="Image 3">
         <img src="https://i.imgur.com/1lzouRg.jpeg" alt="Image 4">
     </div>
+<!-- Newsletter -->
+<div class="newsletter">
+    <h2>Abonne-toi à la newsletter !</h2>
+    <p>Recevez les dernières actualités et mises à jour sur mes nouveaux morceaux.</p>
+    <form action="your-newsletter-handler.php" method="POST">
+        <input type="email" name="email" placeholder="Entrez votre email" required>
+        <button type="submit">S'abonner</button>
+    </form>
+</div>
+
+<style>
+    .newsletter {
+        background-color: #9B54AE;
+        padding: 30px;
+        margin: 40px 0;
+        border-radius: 8px;
+    }
+    .newsletter h2 {
+        margin-bottom: 20px;
+    }
+    .newsletter form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    .newsletter input[type="email"] {
+        padding: 10px;
+        font-size: 1rem;
+        border-radius: 5px;
+        border: none;
+        width: 250px;
+    }
+    .newsletter button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        background-color: #fff;
+        color: #9B54AE;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .newsletter button:hover {
+        background-color: #9B54AE;
+        color: #fff;
+    }
+</style>
 
     <footer>
         <p>&copy; 2025 $exappeal. Tous droits réservés.</p>
